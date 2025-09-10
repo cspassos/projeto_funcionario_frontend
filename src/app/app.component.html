@@ -1,0 +1,29 @@
+<!-- Toolbar -->
+<p-toolbar class="p-3">
+  <div class="p-toolbar-group-left">
+    <span class="text-xl font-semibold">Projeto Funcionário</span>
+  </div>
+
+  <div class="p-toolbar-group-right flex gap-2">
+    <a 
+      routerLink="/funcionarios" 
+      class="p-button p-button-text">
+      Funcionários
+    </a>
+
+    <a 
+      routerLink="/projetos" 
+      class="p-button p-button-text">
+      Projetos
+    </a>
+  </div>
+</p-toolbar>
+
+<!-- Conteúdo principal -->
+<div class="p-3">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- Toast & Dialog -->
+<p-toast></p-toast>
+<p-confirmDialog></p-confirmDialog>

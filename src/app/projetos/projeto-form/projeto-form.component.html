@@ -1,0 +1,43 @@
+<div class="card max-w-30rem">
+  <h2 class="mb-3">
+    {{ id ? 'Editar' : 'Novo' }} Projeto
+  </h2>
+
+  <form (ngSubmit)="salvar()" [formGroup]="form" class="flex flex-column gap-3">
+    <!-- Nome -->
+    <span class="p-float-label">
+      <input pInputText id="nome" formControlName="nome" />
+      <label for="nome">Nome</label>
+    </span>
+
+    <!-- Funcionários -->
+    <div>
+      <label for="funcionarios" class="block mb-2">Funcionários do Projeto</label>
+      <p-multiSelect
+        inputId="funcionarios"
+        [options]="funcionariosOpcoes"
+        formControlName="funcionariosIds"
+        defaultLabel="Selecione..."
+        display="chip">
+      </p-multiSelect>
+    </div>
+
+    <!-- Ações -->
+    <div class="flex gap-2">
+      <button
+        pButton
+        type="submit"
+        label="Salvar"
+        icon="pi pi-check">
+      </button>
+
+      <button
+        pButton
+        type="button"
+        label="Cancelar"
+        class="p-button-text"
+        (click)="cancelar()">
+      </button>
+    </div>
+  </form>
+</div>

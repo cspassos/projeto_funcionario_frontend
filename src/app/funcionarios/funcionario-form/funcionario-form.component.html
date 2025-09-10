@@ -1,0 +1,55 @@
+<div class="card max-w-30rem">
+  <h2 class="mb-3">
+    {{ id ? 'Editar' : 'Novo' }} Funcionário
+  </h2>
+
+  <form (ngSubmit)="salvar()" [formGroup]="form" class="flex flex-column gap-3">
+    <!-- Nome -->
+    <span class="p-float-label">
+      <input pInputText id="nome" formControlName="nome" />
+      <label for="nome">Nome</label>
+    </span>
+
+    <!-- CPF -->
+    <span class="p-float-label">
+      <input pInputText id="cpf" formControlName="cpf" />
+      <label for="cpf">CPF</label>
+    </span>
+
+    <!-- E-mail -->
+    <span class="p-float-label">
+      <input pInputText id="email" formControlName="email" />
+      <label for="email">E-mail</label>
+    </span>
+
+    <!-- Salário -->
+    <div>
+      <label for="salario" class="block mb-1">Salário</label>
+      <p-inputNumber
+        inputId="salario"
+        formControlName="salario"
+        mode="currency"
+        currency="BRL"
+        locale="pt-BR">
+      </p-inputNumber>
+    </div>
+
+    <!-- Ações -->
+    <div class="flex gap-2">
+      <button
+        pButton
+        type="submit"
+        label="Salvar"
+        icon="pi pi-check">
+      </button>
+
+      <button
+        pButton
+        type="button"
+        label="Cancelar"
+        class="p-button-text"
+        (click)="cancelar()">
+      </button>
+    </div>
+  </form>
+</div>
